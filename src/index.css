@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+html {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+@layer components {
+  .apple-button {
+    @apply px-8 py-3 rounded-full bg-gradient-to-r from-[#ffd415] via-[rgb(253,224,5)] to-[#f58e18] 
+    text-black font-semibold transition-all duration-300 ease-in-out 
+    drop-shadow-[0_0_15px_rgba(255,212,21,0.2)] 
+    hover:drop-shadow-[0_0_25px_rgba(255,212,21,0.4)] 
+    focus:outline-none focus:ring-2 focus:ring-[rgb(255,212,21)] focus:ring-opacity-50;
+  }
+  
+
+  .section-title {
+    @apply text-4xl font-bold mb-8 text-center text-[rgb(255,255,255)];
+  }
+
+  
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg;
+  }
+
+  
+}
+
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-floating {
+  animation: floating 3s ease-in-out infinite;
+}
